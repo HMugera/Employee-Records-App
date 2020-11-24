@@ -1,0 +1,37 @@
+//import ReactDOM from "react-dom";
+//import { getQueriesForElement } from "@testing-library/dom";
+// const render = (component)=>{
+//     const div = document.createElement("div");
+//     ReactDOM.render(component, div);
+//    return  getQueriesForElement(div);
+// }
+
+//   expect(getByText("TODO")).not.toBeNull();
+//   //   expect(div.querySelector("label").textContent).toBe("What needs to be done")
+//   expect(getByLabelText("What needs to be done")).not.toBeNull()
+// //   expect(div.querySelector("button").textContent).toBe("Add #1")
+// expect(getByText("Add #1")).not.toBeNull();
+//this is the same as above
+
+//   //use DOM APIS (querySelector) to make assertions
+//above working method uses testing library approach rather than DOM api query selector
+//   expect(div.querySelector("h1").textContent).toBe("TODO");
+
+// const expected =true;
+// const actual = false;
+// //it works acts as documentation
+// /*this test will fail basic example of what a test is all about
+// checck for certain condition and return output depending on it
+// this test will fail because expected is set to true and
+// we are checking value of actual to be false*/
+// test("it works", ()=>{
+//     expect(actual).toBe(expected)
+// })
+
+//example of test
+// const expected =true;
+// const actual = false;
+
+// if(actual !== expected){
+//     throw new Error(`${actual} is not ${expected}`)
+// }
