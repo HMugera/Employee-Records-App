@@ -12,7 +12,7 @@ import {
   TableCell,
   TableRow,
   Toolbar,
-  Typography,
+
 } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import AddIcon from "@material-ui/icons/Add";
