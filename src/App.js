@@ -1,6 +1,6 @@
 import React from "react";
 
-// import SideMenu from "./material-components/SideMenu";
+ import SideMenu from "./material-components/SideMenu";
 import {
   createMuiTheme,
   CssBaseline,
@@ -13,8 +13,11 @@ import Employees from "./material-components/pages/Employees/Employees";
 const theme = createMuiTheme({
   palette: {
     primary: {
+      // main: "#fff",
+      // light: "#000",
       main: "#289cc3",
-      light: "#3c44b126",
+          light: "#3c44b126",
+         
     },
     secondary: {
       main: "#f83245",
@@ -32,7 +35,7 @@ const theme = createMuiTheme({
 const useStyles = makeStyles({
   appMain: {
     padding: "10px",
-    // paddingLeft: "310px",
+    //  paddingLeft: "310px",
     width: "100%",
   },
 });
