@@ -26,16 +26,16 @@ function Popup({ title, children, openPopup, setOpenPopUp }) {
   return (
     <Dialog
       open={openPopup}
-      maxWidth='md'
+      maxWidth="md"
       classes={{ paper: classes.dialogWrapper }}
     >
       <DialogTitle className={classes.dialogTitle}>
         <div style={{ display: "flex" }}>
-          <Typography variant='h6' component='div' style={{ flexGrow: "1" }}>
+          <Typography variant="h6" component="div" style={{ flexGrow: "1" }}>
             {title}
           </Typography>
           <Controls.ActionButton
-            color='secondary'
+            color="secondary"
             onClick={() => setOpenPopUp(false)}
           >
             <CloseIcon />

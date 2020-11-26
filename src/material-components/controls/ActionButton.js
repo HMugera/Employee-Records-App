@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function ActionButton({color, onClick, children}) {
+function ActionButton({ color, onClick, children }) {
   const classes = useStyles();
 
   return (

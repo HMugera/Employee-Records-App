@@ -1,6 +1,6 @@
 import React from "react";
 
- import SideMenu from "./material-components/SideMenu";
+import SideMenu from "./material-components/SideMenu";
 import {
   createMuiTheme,
   CssBaseline,
@@ -16,8 +16,7 @@ const theme = createMuiTheme({
       // main: "#fff",
       // light: "#000",
       main: "#289cc3",
-          light: "#3c44b126",
-         
+      light: "#3c44b126",
     },
     secondary: {
       main: "#f83245",

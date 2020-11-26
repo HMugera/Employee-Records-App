@@ -83,74 +83,74 @@ function EmployeeForm({ mainTitle, addOrEdit, recordForEdit }) {
 
   return (
     <div className={classes.pageContent}>
-      <Typography variant='h5' component='div'>
+      <Typography variant="h5" component="div">
         {mainTitle}
       </Typography>
       <Form onSubmit={handleSubmit}>
         <Grid container>
           <Grid item xs={6}>
             <Controls.Input
-              name='fullName'
-              label='Full Name'
+              name="fullName"
+              label="Full Name"
               value={values.fullName}
               onChange={handleInputChange}
               error={errors.fullName}
             />
             <Controls.Input
-              name='email'
-              label='Email'
+              name="email"
+              label="Email"
               value={values.email}
               onChange={handleInputChange}
               error={errors.email}
             />
             <Controls.Input
-              name='mobile'
-              label='Mobile'
+              name="mobile"
+              label="Mobile"
               value={values.mobile}
               onChange={handleInputChange}
               error={errors.mobile}
             />
             <Controls.Input
-              name='city'
-              label='City'
+              name="city"
+              label="City"
               value={values.city}
               onChange={handleInputChange}
             />
           </Grid>
           <Grid item xs={6}>
             <Controls.RadioGroup
-              name='gender'
-              label='Gender'
+              name="gender"
+              label="Gender"
               value={values.gender}
               onChange={handleInputChange}
               items={genderItems}
             />
             <Controls.Select
-              name='departmentId'
-              label='Department'
+              name="departmentId"
+              label="Department"
               value={values.departmentId}
               onChange={handleInputChange}
               options={employeeService.getDepartmentCollection()}
               error={errors.departmentId}
             />
             <Controls.Datepicker
-              name='hireDate'
-              label='Hire Date'
+              name="hireDate"
+              label="Hire Date"
               value={values.hireDate}
               onChange={handleInputChange}
             />
             <Controls.Checkbox
-              name='isPermanent'
-              label='Permanent Employee'
+              name="isPermanent"
+              label="Permanent Employee"
               value={values.isPermanent}
               onChange={handleInputChange}
             />
 
             <div>
-              <Controls.Button text='Submit' type='submit' />
+              <Controls.Button text="Submit" type="submit" />
               <Controls.Button
-                color='default'
-                text='Reset'
+                color="default"
+                text="Reset"
                 onClick={resetForm}
               />
             </div>

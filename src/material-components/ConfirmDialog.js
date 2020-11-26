@@ -49,18 +49,18 @@ function ConfirmDialog({ confirmDialog, setConfirmDialog }) {
         </IconButton>
       </DialogTitle>
       <DialogContent className={classes.dialogContent}>
-        <Typography variant='h6'>{confirmDialog.title}</Typography>
-        <Typography variant='subtitle2'>{confirmDialog.subTitle}</Typography>
+        <Typography variant="h6">{confirmDialog.title}</Typography>
+        <Typography variant="subtitle2">{confirmDialog.subTitle}</Typography>
       </DialogContent>
       <DialogActions className={classes.dialogAction}>
         <Controls.Button
-          text='No'
-          color='default'
+          text="No"
+          color="default"
           onClick={() => setConfirmDialog({ ...confirmDialog, isOpen: false })}
         />
         <Controls.Button
-          text='Yes'
-          color='secondary'
+          text="Yes"
+          color="secondary"
           onClick={confirmDialog.onConfirm}
         />
       </DialogActions>

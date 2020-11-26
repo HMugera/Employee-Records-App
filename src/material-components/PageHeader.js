@@ -16,10 +16,10 @@ const useStyles = makeStyles((theme) => ({
     color: "#3c44b1",
   },
   pageTitle: {
-      paddingLeft: theme.spacing(4),
-      '& .MuiTypography-subtitle2': {
-          opacity:'0.6'
-      }
+    paddingLeft: theme.spacing(4),
+    "& .MuiTypography-subtitle2": {
+      opacity: "0.6",
+    },
   },
 }));
 
@@ -32,15 +32,11 @@ function PageHeader({ title, subtitle, icon }) {
         <Card className={classes.pageIcon}>{icon}</Card>
 
         <div className={classes.pageTitle}>
-          <Typography
-            variant='h6'
-            component='div'
-      
-          >
+          <Typography variant="h6" component="div">
             {title}
           </Typography>
 
-          <Typography variant='subtitle2' component='div'>
+          <Typography variant="subtitle2" component="div">
             {subtitle}
           </Typography>
         </div>

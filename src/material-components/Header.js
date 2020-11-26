@@ -16,7 +16,7 @@ import SearchIcon from "@material-ui/icons/Search";
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "#fff",
-    transform: "translateZ(0)"
+    transform: "translateZ(0)",
   },
   searchInput: {
     opacity: "0.6",
@@ -40,26 +40,26 @@ function Header() {
   }
 
   return (
-    <AppBar position='static' className={classes.root}>
+    <AppBar position="static" className={classes.root}>
       <Toolbar>
-        <Grid container alignItems='center'>
+        <Grid container alignItems="center">
           <Grid item>
             <InputBase
-              placeholder='Search topics'
+              placeholder="Search topics"
               className={classes.searchInput}
-              startAdornment={<SearchIcon fontSize='small' />}
+              startAdornment={<SearchIcon fontSize="small" />}
             />
           </Grid>
           <Grid item sm></Grid>
           <Grid item>
             <IconButton>
-              <Badge badgeContent={4} color='secondary'>
-                <NotificationsNoneIcon fontSize='small' />
+              <Badge badgeContent={4} color="secondary">
+                <NotificationsNoneIcon fontSize="small" />
               </Badge>
             </IconButton>
             <IconButton>
-              <Badge badgeContent={counter} color='primary'>
-                <ChatBubbleOutlineIcon onClick={Likes} fontSize='small' />
+              <Badge badgeContent={counter} color="primary">
+                <ChatBubbleOutlineIcon onClick={Likes} fontSize="small" />
               </Badge>
             </IconButton>
             <IconButton>

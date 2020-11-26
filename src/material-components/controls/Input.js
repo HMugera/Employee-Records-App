@@ -4,7 +4,7 @@ import React from "react";
 function Input({ name, label, value, error = null, onChange, ...other }) {
   return (
     <TextField
-      variant='outlined'
+      variant="outlined"
       label={label}
       name={name}
       value={value}

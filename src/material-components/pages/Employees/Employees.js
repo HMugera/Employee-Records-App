@@ -21,9 +21,8 @@ import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import useTable from "../../controls/useTable";
 import * as employeeService from "../../../services/employeeService";
 import Controls from "../../controls/Controls";
-import Notification from "../../Notification"
-import ConfirmDialog from "../../ConfirmDialog"
-
+import Notification from "../../Notification";
+import ConfirmDialog from "../../ConfirmDialog";
 
 const useStyles = makeStyles((theme) => ({
   pageContent: {
@@ -57,8 +56,16 @@ function Employees() {
     },
   });
   const [openPopup, setOpenPopup] = useState(false);
-  const [notify, setNotify] = useState({ isOpen: false, message: '', type: '' })
-  const [confirmDialog,setConfirmDialog]= useState({isOpen:false,title:'',subTitle:''});
+  const [notify, setNotify] = useState({
+    isOpen: false,
+    message: "",
+    type: "",
+  });
+  const [confirmDialog, setConfirmDialog] = useState({
+    isOpen: false,
+    title: "",
+    subTitle: "",
+  });
 
   const {
     TblContainer,
@@ -71,7 +78,7 @@ function Employees() {
     let target = e.target;
     setFilterFn({
       fn: (items) => {
-        if (target.value === "") return (items );
+        if (target.value === "") return items;
         else {
           return items.filter((x) =>
             x.fullName.toLowerCase().includes(target.value)
@@ -90,45 +97,45 @@ function Employees() {
     setRecords(employeeService.getAllEmployees);
     setNotify({
       isOpen: true,
-      message: 'Submitted Successfully',
-      type:'success'
-    })
+      message: "Submitted Successfully",
+      type: "success",
+    });
   };
   const openInPopup = (item) => {
     setRecordForEdit(item);
     setOpenPopup(true);
   };
 
-  const onDelete = id => {
+  const onDelete = (id) => {
     setConfirmDialog({
       ...confirmDialog,
-      isOpen:false
-    })
+      isOpen: false,
+    });
     employeeService.deleteEmployee(id);
     setRecords(employeeService.getAllEmployees);
     setNotify({
       isOpen: true,
-      message: 'Deleted Successfully',
-      type:'error'
-    })
-  }
+      message: "Deleted Successfully",
+      type: "error",
+    });
+  };
 
   return (
     <>
       <Paper style={{ height: "100vh" }}>
         <PageHeader
-          icon={<SupervisedUserCircleIcon fontSize='large' />}
+          icon={<SupervisedUserCircleIcon fontSize="large" />}
           title={"Employees"}
           subtitle={"Manage employee records"}
         ></PageHeader>
 
         <Toolbar>
           <Controls.Input
-            label='Search Employees'
+            label="Search Employees"
             className={classes.searchInput}
             InputProps={{
               startAdornment: (
-                <InputAdornment position='start'>
+                <InputAdornment position="start">
                   <SearchIcon />
                 </InputAdornment>
               ),
@@ -136,8 +143,8 @@ function Employees() {
             onChange={handleSearch}
           />
           <Controls.Button
-            text='Add New'
-            variant='outlined'
+            text="Add New"
+            variant="outlined"
             startIcon={<AddIcon />}
             className={classes.addButton}
             onClick={() => {
@@ -158,25 +165,28 @@ function Employees() {
                 <TableCell>{item.department}</TableCell>
                 <TableCell>
                   <Controls.ActionButton
-                    color='primary'
+                    color="primary"
                     onClick={() => {
                       openInPopup(item);
                     }}
                   >
-                    <EditIcon fontSize='small' />
+                    <EditIcon fontSize="small" />
                   </Controls.ActionButton>
-                  <Controls.ActionButton color='secondary'
+                  <Controls.ActionButton
+                    color="secondary"
                     onClick={() => {
                       setConfirmDialog({
                         isOpen: true,
-                        title: 'Are you sure you want to delete this?',
-                        subTitle: 'You cant undo this',
-                        onConfirm:()=>{onDelete(item.id)}
-                      })
+                        title: "Are you sure you want to delete this?",
+                        subTitle: "You cant undo this",
+                        onConfirm: () => {
+                          onDelete(item.id);
+                        },
+                      });
                       //
                     }}
                   >
-                    <DeleteForeverIcon fontSize='small' />
+                    <DeleteForeverIcon fontSize="small" />
                   </Controls.ActionButton>
                 </TableCell>
               </TableRow>
@@ -188,17 +198,14 @@ function Employees() {
         {console.log(records)}
       </Paper>
       <Popup
-        title='Employee Details'
+        title="Employee Details"
         openPopup={openPopup}
         setOpenPopUp={setOpenPopup}
       >
         {/* <EmployeeForm mainTitle={"Personal details"} /> */}
         <EmployeeForm recordForEdit={recordForEdit} addOrEdit={addOrEdit} />
       </Popup>
-      <Notification
-        notify={notify}
-        setNotify={setNotify}
-      />
+      <Notification notify={notify} setNotify={setNotify} />
       <ConfirmDialog
         confirmDialog={confirmDialog}
         setConfirmDialog={setConfirmDialog}
