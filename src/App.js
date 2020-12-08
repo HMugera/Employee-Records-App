@@ -1,6 +1,6 @@
 import React from "react";
 
-import SideMenu from "./material-components/SideMenu";
+// import SideMenu from "./material-components/SideMenu";
 import {
   createMuiTheme,
   CssBaseline,
