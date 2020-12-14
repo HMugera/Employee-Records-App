@@ -12,6 +12,8 @@
     "@testing-library/jest-dom": "^5.11.6",
     "cra-template": "1.0.3",
     "date-fns": "^2.16.1",
+    "joi": "^17.3.0",
+    "node": "^15.4.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
