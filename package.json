@@ -46,5 +46,8 @@
   "devDependencies": {
     "@testing-library/react": "^11.2.1",
     "prettier": "2.2.0"
+  },
+  "optionalDependencies": {
+    "fsevents": "1.2.13"
   }
 }
